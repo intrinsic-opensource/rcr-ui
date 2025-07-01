@@ -73,9 +73,12 @@ const Home: NextPage<HomePageProps> = ({ searchIndex }) => {
           <h1 className="text-ros-blue font-bold text-6xl">
             ROS Central Registry
           </h1>
-          <h4 className="text-grey text-xl">
+          <h4 className="text-grey text-xl mt-2 mb-6">
             The official Bazel rules for ROS packages
           </h4>
+          <span>
+            To use these modules add the line <b>common --registry=https://rcr.ros2.org</b> to your <b>.bazelrc</b> file.
+          </span>
           <form onSubmit={handleSubmitSearch} className="contents">
             <input
               type="text"
