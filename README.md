@@ -30,15 +30,29 @@ bazel run //bin:bazel_env
 
 Packages are managed via [pnpm](https://pnpm.io/), so they can be installed via `npx pnpm install`
 
+```
+sudo apt install npm
+sudo npm install -g pnpm
+pnpm approve-builds
+```
+
 Then, run the development server:
 
 ```bash
 npm run dev
 ```
 
-Open <http://localhost:3000/bazel-central-registry> with your browser to see the result.
+Then to compile all static pages, run the following:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
+
+Finally to server the pre-build module files
+
+```bash
+npx serve@latest out
+```
 
 ### Learn More about Next.js
 

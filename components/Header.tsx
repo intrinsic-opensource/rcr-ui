@@ -22,12 +22,12 @@ export const Header: React.FC<HeaderProps> = () => {
   }
 
   return (
-    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 bg-bzl-green">
+    <nav className="bg-ros-blue border-gray-200 px-2 sm:px-4 py-2.5 bg-ros-blue">
       <div className="container flex flex-wrap gap-4 flex-col sm:flex-row items-center mx-auto">
         <div className="flex flex-1 items-center">
           <Link href="/" className="flex items-center cursor-pointer">
             <span className="self-center text-xl font-semibold whitespace-nowrap text-white cursor-pointer">
-              Bazel Central Registry
+              ROS Central Registry
             </span>
           </Link>
         </div>
@@ -140,7 +140,7 @@ export const Header: React.FC<HeaderProps> = () => {
                 href={CONTRIBUTE_CTA_LINK}
                 className="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0"
               >
-                Contribute to the BCR
+                Contribute to the RCR
               </a>
             </li>
           </ul>

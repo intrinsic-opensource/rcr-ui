@@ -108,8 +108,8 @@ const ModulePage: NextPage<ModulePageProps> = ({
   return (
     <div className="flex flex-col">
       <Head>
-        <title>{`Bazel Central Registry | ${module}`}</title>
-        <link rel="icon" href="/favicon.png" />
+        <title>{`ROS Central Registry | ${module}`}</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
@@ -590,7 +590,7 @@ const useDetectReleaseFormatViaGithubApi = (
           method: 'GET',
           headers: {
             Accept: 'application/vnd.github+json',
-            'User-Agent': 'Bazel Central Registry UI',
+            'User-Agent': 'ROS Central Registry UI',
             'X-GitHub-Api-Version': '2022-11-28',
           },
         }

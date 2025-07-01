@@ -59,8 +59,8 @@ const Home: NextPage<HomePageProps> = ({ searchIndex }) => {
   return (
     <div className="flex flex-col">
       <Head>
-        <title>Bazel Central Registry</title>
-        <link rel="icon" href="/favicon.png" />
+        <title>ROS Central Registry</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
@@ -70,9 +70,12 @@ const Home: NextPage<HomePageProps> = ({ searchIndex }) => {
           src="https://static.scarf.sh/a.png?x-pxid=d6abab51-c2a7-4705-8342-c648e04db0b4"
         />
         <div className="max-w-4xl w-4xl mx-auto mt-8 flex flex-col items-center">
-          <h1 className="text-bzl-green font-bold text-6xl">
-            Bazel Central Registry
+          <h1 className="text-ros-blue font-bold text-6xl">
+            ROS Central Registry
           </h1>
+          <h4 className="text-grey text-xl">
+            The official Bazel rules for ROS packages
+          </h4>
           <form onSubmit={handleSubmitSearch} className="contents">
             <input
               type="text"
