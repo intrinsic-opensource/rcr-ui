@@ -3,7 +3,7 @@ import React from 'react'
 interface FooterProps {}
 
 export const REPORT_LINK =
-  'https://github.com/bazelbuild/bazel-central-registry/tree/main/docs#requesting-to-take-down-a-module'
+  'https://github.com/asymingt/ros-central-registry/tree/main/docs#requesting-to-take-down-a-module'
 export const BCR_UI_REPO_LINK = 'https://github.com/bazel-contrib/bcr-ui'
 
 export const Footer: React.FC<FooterProps> = () => {

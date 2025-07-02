@@ -210,13 +210,13 @@ const ModulePage: NextPage<ModulePageProps> = ({
                               <div className="flex p-2 justify-end">
                                 <div className="flex flex-col justify-between items-end">
                                   <a
-                                    href={`https://github.com/bazelbuild/bazel-central-registry/tree/main/modules/${module}/${version.version}`}
+                                    href={`https://github.com/asymingt/ros-central-registry/tree/main/modules/${module}/${version.version}`}
                                     className="text-link-color hover:text-link-color-hover"
                                   >
                                     view registry source
                                   </a>
                                   <a
-                                    href={`https://github.com/bazelbuild/bazel-central-registry/commit/${version.submission.hash}`}
+                                    href={`https://github.com/asymingt/ros-central-registry/commit/${version.submission.hash}`}
                                     className="text-link-color hover:text-link-color-hover"
                                     suppressHydrationWarning
                                   >

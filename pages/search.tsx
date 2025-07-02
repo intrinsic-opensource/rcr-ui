@@ -14,7 +14,7 @@ interface SearchPageProps {
 }
 
 const GITHUB_ISSUE_LINK =
-  'https://github.com/bazelbuild/bazel-central-registry/issues/new?assignees=&labels=module+wanted&template=module_wanted.yaml&title=wanted%3A+%5Bgithub+path+of+the+module%2C+e.g.+bazelbuild%2Frules_foo%5D'
+  'https://github.com/asymingt/ros-central-registry/issues/new?assignees=&labels=module+wanted&template=module_wanted.yaml&title=wanted%3A+%5Bgithub+path+of+the+module%2C+e.g.+bazelbuild%2Frules_foo%5D'
 
 const Search: NextPage<SearchPageProps> = ({ searchIndex }) => {
   const [searchResults, setSearchResults] = useState<SearchIndexEntry[]>([])

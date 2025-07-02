@@ -10,7 +10,7 @@ import yaml from 'js-yaml'
 export const MODULES_ROOT_DIR = path.join(
   process.cwd(),
   'data',
-  'bazel-central-registry',
+  'ros-central-registry',
   'modules'
 )
 
@@ -90,7 +90,7 @@ const getSubmissionCommitOfVersionInternal = async (
   version: string
 ): Promise<Commit> => {
   const options = {
-    repo: path.join(process.cwd(), 'data', 'bazel-central-registry'),
+    repo: path.join(process.cwd(), 'data', 'ros-central-registry'),
     number: 10,
     file: `modules/${module}/${version}/source.json`,
     fields: ['hash', 'authorDate', 'authorDateRel'] as any,
