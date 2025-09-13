@@ -99,9 +99,12 @@ const getSubmissionCommitOfVersionInternal = async (
   const commits = await gitlogPromise(options)
 
   const commitInfo = commits[commits.length - 1] as any
-  const authorDateIso = formatISO(
-    parse(commitInfo.authorDate, 'yyyy-MM-dd HH:mm:ss xxxx', new Date())
-  )
+  const myDate = new Date();
+  const authorDateIso = formatISO(myDate);
+
+  // const authorDateIso = formatISO(
+  //   parse(commitInfo?.authorDate, 'yyyy-MM-dd HH:mm:ss xxxx', new Date())
+  // )
   return {
     ...commitInfo,
     authorDateIso,
