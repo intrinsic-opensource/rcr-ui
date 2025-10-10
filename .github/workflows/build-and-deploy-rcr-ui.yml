@@ -52,7 +52,7 @@ jobs:
       run: pnpm install
 
     - name: Generate static web pages
-      run: pnpm run build
+      run: NEXT_PUBLIC_BASE_PATH=/rcr-ui pnpm run build
 
     - name: Deploy to github pages
       uses: JamesIves/github-pages-deploy-action@v4
