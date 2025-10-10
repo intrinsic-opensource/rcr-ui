@@ -13,7 +13,7 @@
 # limitations under the License.
 
 name: build-and-deploy-rcr-ui
-run-name: ${{ github.actor }} tests code against a linux amd64 platform.
+run-name: ${{ github.actor }} builds and deploys github pages
 on: [push]
 permissions:
   contents: write
@@ -22,28 +22,33 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
 
-    # Install necessary platform tooling
     - name: Install platform tooling
       timeout-minutes: 10
       run: |
         sudo apt-get -qq install npm
         sudo npm install -g pnpm
 
-    # Checkout this repository and all submodules.
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
       with:
         submodules: true
 
-    # Build the ROS examples.
+    - name: Setup Bazel
+      uses: bazel-contrib/setup-bazel@0.15.0
+      with:
+        bazelisk-cache: false
+        disk-cache: ${{ github.workflow }}
+        repository-cache: false
+
+    - name: Install buildifier and buildozer
+      run: bazel run //bin:bazel_env
+
     - name: Install project dependencies
       run: pnpm install
 
-    # Test the distribution.
     - name: Generate static web pages
       run: pnpm run build
 
-    # Deploy to github pages
     - name: Deploy to github pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:

@@ -1,67 +1,42 @@
-# Bazel Central Registry Web UI
+# ROS Central Registry Web UI
 
-This repository provides a web UI for the [Bazel Central Registry (BCR)](https://github.com/bazelbuild/bazel-central-registry).
-It entirely consists of statically rendered pages, which are updated as soon as a new commit is pushed to the BCR.
+This repository is a fork of the [Bazel Central Registry (BCR) UI](https://github.com/bazel-contrib/bcr-ui), with changes made to parse Bazel Modules from the [ROS Central Registry (RCR)](https://github.com/intrinsic-opensource/ros-central-registry) and use a different blue theme throughout the site.
 
-## Contributing
+# Regeneration instructions
 
-We are happy about any contributions!
+You will need access to an Ubuntu 24.04 environment with Bazel. We recommend installing [bazelisk](https://github.com/bazelbuild/bazelisk) to ensure compatibility.
 
-To get started you can take a look at our [Github issues](https://github.com/hobofan/bcr-web-ui/issues).
-
-Unless you explicitly state otherwise, any contribution intentionally
-submitted for inclusion in the work by you, as defined in the Apache-2.0
-license, shall be licensed as below, without any additional terms or
-conditions.
-
-### Getting Started
-
-We use git submodules to include the data from bazelbuild/bazel-central-registry, so after cloning this repo you need to run:
+The ROS Central Registry is included as a submodule, so you must checkout this repo in this way
 
 ```bash
+git clone https://github.com/intrinsic-opensource/rcr-ui.git
 git submodule update --init
 ```
 
-To get a buildifier and buildozer on your PATH, you also need to run this before launching the app:
+To get buildifier and buildozer, you must run this:
 
 ```bash
 bazel run //bin:bazel_env
 ```
 
-Packages are managed via [pnpm](https://pnpm.io/), so they can be installed via `npx pnpm install`
+Packages are managed via [pnpm](https://pnpm.io), so you must install this tooling first.
 
 ```
 sudo apt install npm
 sudo npm install -g pnpm
-pnpm approve-builds
 ```
 
-Then, run the development server:
+Then to install all project dependencies.
 
 ```bash
-npm run dev
+pnpm install
 ```
 
 Then to compile all static pages, run the following:
 
 ```bash
-npm run build
+pnpm run build
 ```
-
-Finally to server the pre-build module files
-
-```bash
-npx serve@latest out
-```
-
-### Learn More about Next.js
-
-The page is built on top of Next.js.
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 ## License
 
