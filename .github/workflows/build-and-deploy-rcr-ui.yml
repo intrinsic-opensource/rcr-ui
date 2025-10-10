@@ -1,0 +1,50 @@
+# Copyright 2025 Open Source Robotics Foundation, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: build-and-deploy-rcr-ui
+run-name: ${{ github.actor }} tests code against a linux amd64 platform.
+on: [push]
+permissions:
+  contents: write
+jobs:
+  checkout-setup-build-test: 
+    runs-on: ubuntu-24.04
+    steps:
+
+    # Install necessary platform tooling
+    - name: Install platform tooling
+      timeout-minutes: 10
+      run: |
+        sudo apt-get -qq npm
+        sudo npm install -g pnpm
+
+    # Checkout this repository and all submodules.
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    # Build the ROS examples.
+    - name: Install project dependencies
+      run: pnpm install
+
+    # Test the distribution.
+    - name: Generate static web pages
+      run: pnpm run build
+
+    # Deploy to github pages
+    - name: Deploy to github pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: out

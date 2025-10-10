@@ -11,6 +11,7 @@ export const MODULES_ROOT_DIR = path.join(
   process.cwd(),
   'data',
   'ros-central-registry',
+  'docs',
   'modules'
 )
 
