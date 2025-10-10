@@ -26,7 +26,7 @@ jobs:
     - name: Install platform tooling
       timeout-minutes: 10
       run: |
-        sudo apt-get -qq npm
+        sudo apt-get -qq install npm
         sudo npm install -g pnpm
 
     # Checkout this repository and all submodules.
