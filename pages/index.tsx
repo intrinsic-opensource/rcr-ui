@@ -76,7 +76,7 @@ const Home: NextPage<HomePageProps> = ({ searchIndex }) => {
             The official Bazel rules for ROS packages
           </h4>
           <span>
-            To use these modules add the line <b>common --registry=https://rcr.ros2.org</b> to your <b>.bazelrc</b> file.
+            Please visit the <a href='https://github.com/intrinsic-opensource/ros-central-registry'>ROS Central Registry</a> website for usage information.
           </span>
           <form onSubmit={handleSubmitSearch} className="contents">
             <input
