@@ -17,14 +17,13 @@ import { parseISO } from 'date-fns'
 //   { module: 'apple_support', version: '0.0.0' },
 // ]
 const HIGHLIGHTED_MODULES = [
-  'bazel-gazelle',
-  'rules_go',
-  'rules_oci',
-  'rules_python',
-  'toolchains_llvm',
-  'rules_foreign_cc',
-  'rules_jvm_external',
-  'rules_nodejs',
+  'ament_index_cpp',
+  'rosidl_generator_c',
+  'rosidl_generator_cpp',
+  'rcl',
+  'rclcpp',
+  'rosidl_typesupport_protobuf_cpp',
+  'rosdistro',
 ]
 
 interface HomePageProps {
