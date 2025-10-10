@@ -25,9 +25,10 @@ jobs:
     - name: Install platform tooling
       timeout-minutes: 10
       run: |
-        sudo apt-get -qq install npm
+        sudo apt-get -qq install npm direnv
         sudo npm install -g pnpm
-
+        eval "$(direnv hook bash)"
+    
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
       with:
@@ -41,7 +42,11 @@ jobs:
         repository-cache: false
 
     - name: Install buildifier and buildozer
-      run: bazel run //bin:bazel_env
+      run: |
+        direnv allow .
+        eval "$(direnv export bash)"
+        echo "PATH=$PATH" >> $GITHUB_ENV
+        bazel run //bin:bazel_env
 
     - name: Install project dependencies
       run: pnpm install
