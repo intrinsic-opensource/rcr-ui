@@ -1,4 +1,3 @@
 [submodule "data/ros-central-registry"]
 	path = data/ros-central-registry
-	url = https://github.com/asymingt/ros-central-registry.git
-	branch = asymingt/bazel-ros
+	url = https://github.com/intrinsic-opensource/ros-central-registry.git
