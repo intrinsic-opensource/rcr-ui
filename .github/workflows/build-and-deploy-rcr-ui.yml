@@ -14,7 +14,16 @@
 
 name: build-and-deploy-rcr-ui
 run-name: ${{ github.actor }} builds and deploys github pages
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  repository_dispatch:
+    types: [on-rcr-trigger]
+
 permissions:
   contents: write
 jobs:
@@ -22,17 +31,22 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
 
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+        fetch-depth: 0
+
+    - name: Switch to latest gh-pages branch of the RCR
+      run: |
+        git submodule foreach git checkout origin/gh-pages
+  
     - name: Install platform tooling
       timeout-minutes: 10
       run: |
         sudo apt-get -qq install npm direnv
         sudo npm install -g pnpm
         eval "$(direnv hook bash)"
-    
-    - name: Checkout repository and submodules
-      uses: actions/checkout@v4
-      with:
-        submodules: true
 
     - name: Setup Bazel
       uses: bazel-contrib/setup-bazel@0.15.0
