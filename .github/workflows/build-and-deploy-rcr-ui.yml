@@ -39,8 +39,7 @@ jobs:
     - name: Switch to latest gh-pages branch of the RCR
       run: |
         git submodule foreach git fetch
-        git submodule foreach git checkout gh-pages
-        git submodule foreach git pull --force
+        git submodule foreach git checkout origin/gh-pages
   
     - name: Install platform tooling
       timeout-minutes: 10
