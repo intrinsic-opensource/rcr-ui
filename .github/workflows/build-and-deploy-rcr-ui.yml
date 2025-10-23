@@ -31,13 +31,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
 
-    - name: Install platform tooling
-      timeout-minutes: 10
-      run: |
-        sudo apt-get -qq install npm direnv
-        sudo npm install -g pnpm
-        eval "$(direnv hook bash)"
-    
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
       with:
@@ -45,9 +38,17 @@ jobs:
 
     - name: Switch to latest gh-pages branch of the RCR
       run: |
+        git submodule foreach git fetch
         git submodule foreach git checkout gh-pages
         git submodule foreach git pull --force
   
+    - name: Install platform tooling
+      timeout-minutes: 10
+      run: |
+        sudo apt-get -qq install npm direnv
+        sudo npm install -g pnpm
+        eval "$(direnv hook bash)"
+
     - name: Setup Bazel
       uses: bazel-contrib/setup-bazel@0.15.0
       with:
