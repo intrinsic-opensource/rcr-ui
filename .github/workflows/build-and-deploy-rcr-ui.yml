@@ -45,6 +45,7 @@ jobs:
 
     - name: Switch to latest gh-pages branch of the RCR
       run: |
+        git submodule foreach git fetch origin gh-pages
         git submodule foreach git checkout origin/gh-pages 
   
     - name: Setup Bazel
