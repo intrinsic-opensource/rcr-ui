@@ -73,7 +73,7 @@ const Home: NextPage<HomePageProps> = ({ searchIndex }) => {
             ROS Central Registry
           </h1>
           <h4 className="text-grey text-xl mt-2 mb-6">
-            The official Bazel rules for ROS packages
+            ROS packages as Bazel Modules (developer preview)
           </h4>
           <span>
             Please visit the <a href='https://github.com/intrinsic-opensource/ros-central-registry'>ROS Central Registry</a> website for usage information.
