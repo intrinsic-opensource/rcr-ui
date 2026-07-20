@@ -58,8 +58,8 @@ class RegistryApp extends App {
 		super(opt_domHelper);
 
 		const pathPrefix = window.location.pathname.startsWith("/rcr-ui/")
-			? "/rcr-ui"
-			: "";
+			? "/rcr-ui/"
+			: "/";
 		this.history_.history_.setPathPrefix(pathPrefix);
 
 		/** @private @const */
