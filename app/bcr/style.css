@@ -3,6 +3,10 @@
  * to closure_css_binary.
  */
 
+.Header {
+	padding-left: 0 !important;
+}
+
 /* ========================================
  * Mobile Responsive Fixes
  * ======================================== */
