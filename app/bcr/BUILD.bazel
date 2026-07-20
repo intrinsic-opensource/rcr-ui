@@ -415,6 +415,7 @@ css_purge(
 # dead weight.
 RELEASE_SRCS = [
     "favicon.png",
+    "ros_logo.png",
     ":robots_txt",
     ":sitemap_xml",
 ] + select({

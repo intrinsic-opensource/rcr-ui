@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"maps"
+	"os"
 	"path/filepath"
 	"slices"
 	"sort"
@@ -204,7 +205,8 @@ func (ext *bcrExtension) handleSourceUrlStatus(url string, moduleIDs []moduleID,
 		// via .local — we avoid downloading the upstream archive at all in that
 		// case.
 		var bzlRule *rule.Rule
-		if len(source.Overlay) > 0 && ext.registryRoot != "" {
+		overlayDir := filepath.Join(ext.repoRoot, ext.registryRoot, "modules", module.Name, module.Version, "overlay")
+		if len(source.Overlay) > 0 && ext.registryRoot != "" && dirExists(overlayDir) {
 			bzlRule = makeOverlayBzlRepository(lbl, module.Name, module.Version, ext.registryRoot)
 		} else {
 			bzlRule = makeBzlRepository(lbl, module, source)
@@ -928,5 +930,13 @@ func selectVersion(rule *protoRule[*bzpb.ModuleVersion], version moduleVersion, 
 		log.Printf("WARNING: %s not available, falling back to %s", newModuleID(rule.Proto().Name, string(version)), newModuleID(rule.Proto().Name, string(fallback.version)))
 	}
 	return choose(fallback)
+}
+
+func dirExists(path string) bool {
+	info, err := os.Stat(path)
+	if os.IsNotExist(err) {
+		return false
+	}
+	return info.IsDir()
 }
 

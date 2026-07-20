@@ -253,7 +253,7 @@ function computeRecentlyUpdated(registry) {
 			isNew: item.m.getVersionsList().length === 1,
 			linkUrl: `/modules/${item.v.getName()}/${item.v.getVersion()}`,
 			pullRequestUrl: pr
-				? `https://github.com/bazelbuild/bazel-central-registry/pull/${pr}`
+				? `https://github.com/intrinsic-opensource/ros-central-registry/pull/${pr}`
 				: "",
 			displayName: item.v.getName(),
 		};
@@ -294,7 +294,7 @@ function computeRecentlyAdded(registry) {
 			isNew: true,
 			linkUrl: `/modules/${item.v.getName()}/${item.v.getVersion()}`,
 			pullRequestUrl: pr
-				? `https://github.com/bazelbuild/bazel-central-registry/pull/${pr}`
+				? `https://github.com/intrinsic-opensource/ros-central-registry/pull/${pr}`
 				: "",
 			displayName: item.v.getName(),
 		};

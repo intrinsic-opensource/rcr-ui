@@ -915,7 +915,7 @@ import {
   {let $distanceMap: $versionDistances.get($dep.getName()) /}
   <div style="display: flex; align-items: center;">
     <span style="padding-right: 0.5em;">
-      <a class="Box-row-link" href="{moduleVersionUrl(name: $dep.getName(), version: $dep.getVersion())}">
+      <a class="Box-row-link" href="{moduleVersionUrl(name: $dep.getName(), version: $dep.getVersion(), unresolved: $dep.getUnresolved())}">
         {$dep.getName()|truncate:32}
         <span class="ml-1 text-light text-small">
           {if $override}
@@ -925,8 +925,8 @@ import {
             )
           {elseif $dep.getUnresolved()}
             (
-            <span class="mr-1" style="text-decoration: line-through;">{$dep.getVersion()|truncate:32}</span>
-            <span class="text-bold" style="color: var(--fgColor-danger, var(--color-danger-fg))">unresolved</span>
+            <span class="mr-1">{$dep.getVersion()|truncate:32}</span>
+            <span class="text-bold" style="color: var(--fgColor-success, var(--color-success-fg))">BCR</span>
             )
           {else}
             {$dep.getVersion()|truncate:32}
@@ -945,7 +945,7 @@ import {
         {else}
           {if $distanceMap}
             {let $distanceInfo: $distanceMap.get($dep.getVersion()) /}
-            <a class="Box-row-link text-light text-small" href="{moduleVersionUrl(name: $dep.getName(), version: $latest.getVersion())}">
+            <a class="Box-row-link text-light text-small" href="{moduleVersionUrl(name: $dep.getName(), version: $latest.getVersion(), unresolved: $dep.getUnresolved())}">
               {$latest.getVersion()|truncate:32}
               {if $distanceInfo && $distanceInfo.versionsBehind > 0}
                 <span title="Version Distance">
@@ -959,7 +959,7 @@ import {
               {/if}
             </a>
           {else}
-            <a class="Box-row-link text-light text-small" href="{moduleVersionUrl(name: $dep.getName(), version: $latest.getVersion())}">
+            <a class="Box-row-link text-light text-small" href="{moduleVersionUrl(name: $dep.getName(), version: $latest.getVersion(), unresolved: $dep.getUnresolved())}">
               {$latest.getVersion()|truncate:32}
             </a>
           {/if}

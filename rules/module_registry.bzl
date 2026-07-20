@@ -333,7 +333,9 @@ def _compile_bzl_for_module_version(ctx, mv, all_mv_by_id):
 
         if not module_version:
             # buildifier: disable=print
-            print("🔴 WARN for module %s, the module for bzl source dependency %s was not found!" % (module_version.id, starlark_module.label.repo_name))
+            print("⚠️ WARN: module version for bzl source dependency %s (%s) was not found in registry (requested by %s)! Synthesizing fallback." % (starlark_module.label.repo_name, id, mv.id))
+            fallback_name = id.split("@")[0]
+            _add_args_for_starlark_modules(args, fallback_name, starlark_module.modules, [])
             continue
 
         # buildifier: disable=print

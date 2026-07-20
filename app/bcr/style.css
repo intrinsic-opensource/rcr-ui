@@ -3,6 +3,14 @@
  * to closure_css_binary.
  */
 
+.Header {
+	padding-left: 0 !important;
+}
+
+.PageLayout:has(.PageLayout-pane) .Header {
+	padding-left: 8px !important;
+}
+
 /* ========================================
  * Mobile Responsive Fixes
  * ======================================== */
