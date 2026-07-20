@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /settings
+Sitemap: https://raw.githubusercontent.com/intrinsic-opensource/ros-central-registry/main/sitemap.xml

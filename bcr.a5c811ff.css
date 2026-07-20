@@ -1,0 +1,586 @@
+:root {
+}
+
+html.bcr_-booting_ .content_.PageLayout_-content_ {
+  visibility: hidden;
+}
+.app_-container_ {
+  background: var(--color-canvas-default);
+  color: var(--color-fg-default);
+  font-family: sans-serif;
+  margin: 1em auto;
+  padding: 0 1em;
+  width: 960px;
+}
+.app_-logo_ {
+  display: block;
+  height: 32px;
+  width: auto;
+}
+.dossier_-ac_ {
+  z-index: 200;
+}
+.ac_-renderer_ {
+  z-index: 200;
+  position: absolute;
+  background: var(--color-canvas-overlay);
+  border: 1px solid var(--color-border-default);
+  box-shadow: var(--color-shadow-medium);
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.ac_-row_ {
+  cursor: pointer;
+  padding: 8px;
+  line-height: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.ac_-highlighted_ {
+  background-color: var(--color-neutral-muted);
+}
+.ac_-active_ {
+  background-color: var(--color-action-list-item-default-selected-bg);
+  color: var(--color-fg-default);
+}
+.ac_-renderer_ b, .ac_-row_ b {
+  background-color: var(--color-search-keyword-hl);
+  font-weight: 600;
+}
+.marked_ {
+  font-size: 14px !important;
+  overflow-x: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+}
+.goog_-tree_-root_:focus {
+  outline: none;
+}
+.goog_-tree_-row_ {
+  white-space: nowrap;
+  font: icon;
+  line-height: 16px;
+  height: 24px;
+}
+.goog_-tree_-row_ span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.goog_-tree_-children_ {
+  background-repeat: repeat-y;
+  background-image: url(//ssl.gstatic.com/closure/tree/I.png) !important;
+  background-position-y: 1px !important;
+  font: icon;
+}
+.goog_-tree_-children_-nolines_ {
+  font: icon;
+}
+.goog_-tree_-icon_ {
+  background-image: url(//ssl.gstatic.com/closure/tree/tree.png);
+}
+.goog_-tree_-expand_-icon_ {
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  cursor: default;
+}
+.goog_-tree_-expand_-icon_-plus_ {
+  width: 19px;
+  background-position: 0 0;
+}
+.goog_-tree_-expand_-icon_-minus_ {
+  width: 19px;
+  background-position: -24px 0;
+}
+.goog_-tree_-expand_-icon_-tplus_ {
+  width: 19px;
+  background-position: -48px 0;
+}
+.goog_-tree_-expand_-icon_-tminus_ {
+  width: 19px;
+  background-position: -72px 0;
+}
+.goog_-tree_-expand_-icon_-lplus_ {
+  width: 19px;
+  background-position: -96px 0;
+}
+.goog_-tree_-expand_-icon_-lminus_ {
+  width: 19px;
+  background-position: -120px 0;
+}
+.goog_-tree_-expand_-icon_-t_ {
+  width: 19px;
+  background-position: -144px 0;
+}
+.goog_-tree_-expand_-icon_-l_ {
+  width: 19px;
+  background-position: -168px 0;
+}
+.goog_-tree_-expand_-icon_-blank_ {
+  width: 19px;
+  background-position: -168px -24px;
+}
+.goog_-tree_-collapsed_-folder_-icon_ {
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  background-position: 0 -24px;
+}
+.goog_-tree_-expanded_-folder_-icon_ {
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  background-position: -24px -24px;
+}
+.goog_-tree_-file_-icon_ {
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  background-position: -48px -24px;
+}
+.goog_-tree_-item_-label_ {
+  margin-left: 3px;
+  padding: 1px 2px;
+  text-decoration: none;
+  color: WindowText;
+  cursor: default;
+}
+.goog_-tree_-item_-label_:hover {
+  text-decoration: underline;
+}
+.selected_ .goog_-tree_-item_-label_ {
+  background-color: ButtonFace;
+  color: ButtonText;
+}
+.focused_ .selected_ .goog_-tree_-item_-label_ {
+  background-color: Highlight;
+  color: HighlightText;
+}
+.goog_-tree_-hide_-root_ {
+  display: none;
+}
+{
+"version":3,
+"file":"css.css.map",
+"lineCount":163,
+"mappings":"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",
+"sources":["app/bcr/style.closure.css"],
+"names":[]
+}
+/**
+ * style.css contains assorted css classes that are used directly, not subject
+ * to closure_css_binary.
+ */
+
+.Header {
+	padding-left: 0 !important;
+}
+
+.PageLayout:has(.PageLayout-pane) .Header {
+	padding-left: 8px !important;
+}
+
+/* ========================================
+ * Mobile Responsive Fixes
+ * ======================================== */
+
+/* Allow Header to wrap on small screens */
+@media (max-width: 767.98px) {
+	.Header {
+		flex-wrap: wrap !important;
+		gap: 8px;
+	}
+
+	.Header-item {
+		margin-right: 8px !important;
+	}
+
+	.Header-item--full {
+		flex-basis: 100%;
+		order: 2;
+	}
+}
+
+/* Reduce logo size on mobile */
+@media (max-width: 543.98px) {
+	.Header-item[style*="max-width: 54px"] {
+		max-width: 40px !important;
+	}
+}
+
+/* ========================================
+ * Code Block Overflow Fixes
+ * ======================================== */
+
+/* Prevent pre/code blocks from expanding viewport on mobile */
+pre {
+	overflow-x: auto !important;
+	max-width: 100%;
+	/* Smooth scrolling on iOS */
+	-webkit-overflow-scrolling: touch;
+}
+
+pre code {
+	white-space: pre;
+	word-wrap: normal;
+	overflow-wrap: normal;
+}
+
+/* Ensure Box containers don't overflow */
+.Box {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.Box .Box-body,
+.Box .Box-row {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.Box .Box-body pre,
+.Box .Box-row pre {
+	margin: 0;
+}
+
+/* Ensure tables in boxes don't overflow */
+.Box .Box-body table,
+.Box .Box-row table {
+	display: block;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Restore table semantics for the dependents matrix.
+ * The matrix has its own overflow wrapper and needs display: table
+ * for sticky columns and cell-grid layout to work. */
+.Box .Box-body .dependents-matrix table {
+	display: table;
+}
+
+/* Markdown content (READMEs, descriptions): never push parent wider.
+ * Wrap long words/URLs and clamp images so a markdown blob can't trigger
+ * page-level horizontal scrolling on narrow viewports. */
+.markdown-body {
+	max-width: 100%;
+	min-width: 0;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.markdown-body img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* PageLayout grid items default to min-width: auto, which lets a wide
+ * child (a long pre, table, image, or unbroken URL) blow out the column.
+ * Force them shrinkable so overflow-x rules above can take effect. */
+.PageLayout .PageLayout-content,
+.PageLayout .PageLayout-pane {
+	min-width: 0;
+}
+
+/* width-full on mobile should respect container bounds */
+@media (max-width: 767.98px) {
+	.width-full {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+	}
+}
+
+/* The search input visually fuses with the scope BtnGroup on its right
+ * edge — clip the right border + radius so they share a single seam.
+ * The BtnGroup itself is hidden below md, so this fusion only applies
+ * once the pills are visible; below md the input keeps its natural
+ * full border so it doesn't look amputated. */
+@media (min-width: 768px) {
+	.form-control.search-scope-fused {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		border-right: 0;
+	}
+}
+
+.btn-language {
+	color: var(--lang-fg) !important;
+	background-color: var(--lang-bg) !important;
+	border: 1px solid;
+	border-color: color-mix(in srgb, var(--lang-bg) 70%, black) !important;
+}
+
+.octicon {
+	display: inline-block;
+	text-decoration: none;
+	text-rendering: auto;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	speak: none;
+}
+
+/* MVS Dependency Tree Styles */
+.mvs-tree-container {
+	overflow: auto;
+}
+
+.mvs-tree-dev-dep {
+	color: var(--color-attention-fg);
+	font-style: italic;
+}
+
+.mvs-tree-upgraded {
+	color: var(--color-success-fg);
+	font-weight: 600;
+}
+
+.mvs-tree-controls {
+	margin-bottom: 8px;
+	display: flex;
+	gap: 8px;
+}
+
+/* ========================================
+ * TreeView Component (SVG tree lines)
+ * ======================================== */
+
+.treeview-root {
+	margin: 0;
+	padding: 0;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial,
+		sans-serif;
+	font-size: 14px;
+	line-height: 24px;
+	color: var(--color-fg-default);
+}
+
+.treeview-item {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.treeview-item-root {
+	padding-left: 0;
+}
+
+.treeview-item-row {
+	display: flex;
+	align-items: center;
+	padding-left: calc((var(--level, 0) - 1) * 24px + 0.25rem);
+	min-height: 24px;
+}
+
+.treeview-item-row:hover {
+	background-color: var(--color-neutral-subtle);
+	border-radius: 6px;
+}
+
+.treeview-line {
+	flex-shrink: 0;
+	display: block;
+	margin-right: 0.25rem;
+}
+
+.treeview-label {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 24px;
+	text-decoration: none;
+	color: inherit;
+}
+
+.treeview-label:hover {
+	color: var(--color-accent-fg);
+	text-decoration: underline;
+}
+
+.treeview-metadata {
+	margin-left: 6px;
+	padding: 2px 6px;
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: 500;
+	background-color: var(--color-neutral-muted);
+	color: var(--color-fg-muted);
+}
+
+.treeview-metadata-dev {
+	background-color: var(--color-accent-subtle);
+	color: var(--color-accent-fg);
+}
+
+.treeview-metadata-upgraded {
+	background-color: var(--color-attention-subtle);
+	color: var(--color-attention-fg);
+}
+
+.treeview-override-badge {
+	color: var(--color-fg-muted);
+	text-decoration: none;
+}
+
+.treeview-override-badge:hover {
+	color: var(--color-accent-fg);
+	text-decoration: underline;
+}
+
+.treeview-children {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* ========================================
+ * Skeleton Loading Animation
+ * ======================================== */
+
+@keyframes skeleton-shimmer {
+	0% {
+		mask-position: 200%;
+	}
+
+	to {
+		mask-position: 0;
+	}
+}
+
+.skeleton-box {
+	background-color: var(--skeletonLoader-bgColor, var(--color-neutral-muted));
+	border-radius: var(--borderRadius-small, 0.1875rem);
+	display: inline-block;
+	height: 1rem;
+	width: 6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.skeleton-box {
+		animation: skeleton-shimmer 4s infinite;
+		mask-image: linear-gradient(75deg, #000 30%, rgba(0, 0, 0, 0.65) 80%);
+		mask-size: 200%;
+	}
+}
+
+@media (forced-colors: active) {
+	.skeleton-box {
+		outline: 1px solid transparent;
+		outline-offset: -1px;
+	}
+}
+
+/* ========================================
+ * Registry Data Refresh indicator
+ * ======================================== */
+
+/* Small octicon pinned to the upper-right of the Bazel logo. Hidden by
+ * default; revealed when RefreshController detects a backend change by
+ * toggling .bcr-refresh-available on <html>. Clicking the icon reloads. */
+.bcr-refresh-indicator {
+	position: absolute;
+	top: 6px;
+	left: -12px;
+	display: none;
+	background-color: var(--color-accent-emphasis, #0969da);
+	color: var(--color-fg-on-emphasis, #fff);
+	border-radius: 50%;
+	padding: 2px;
+	line-height: 0;
+	text-decoration: none;
+}
+
+html.bcr-refresh-available .bcr-refresh-indicator {
+	display: inline-flex;
+	animation: bcr-refresh-pulse 2s infinite;
+}
+
+@keyframes bcr-refresh-pulse {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html.bcr-refresh-available .bcr-refresh-indicator {
+		animation: none;
+	}
+}
+
+/* ========================================
+ * Recently Updated Timeline
+ * ======================================== */
+
+.timeline-avatar-badge {
+	background-color: var(
+		--bgColor-default,
+		var(--color-canvas-default)
+	) !important;
+	border: 3px solid var(--bgColor-default, var(--color-canvas-default)) !important;
+	padding: 0;
+	overflow: hidden;
+	border-radius: 50%;
+	width: 48px !important;
+	height: 48px !important;
+	margin-left: -23px !important;
+}
+
+.timeline-avatar-badge img {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.timeline-avatar-badge + .TimelineItem-body {
+	margin-top: 0;
+	align-self: center;
+}
+
+.timeline-first:before {
+	top: 50% !important;
+}
+
+.timeline-last:before {
+	bottom: 50% !important;
+}
+
+/* ========================================
+ * Dotted Leader (label .... value rows)
+ * ======================================== */
+
+.dotted-leader {
+	flex: 1;
+	border-bottom: 1px dotted var(--color-border-muted);
+	margin: 0 0.5em;
+}
+
+/* ========================================
+ * Bazel Versions Tree (semver grouping)
+ * ======================================== */
+
+.bazel-major-summary {
+	cursor: pointer;
+	list-style: none;
+}
+
+.bazel-major-summary::-webkit-details-marker {
+	display: none;
+}
+
+.bazel-major-summary::marker {
+	display: none;
+	content: "";
+}
