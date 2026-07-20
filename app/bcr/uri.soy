@@ -38,7 +38,12 @@ import {
 {template moduleVersionUrl kind="uri"}
   {@param name: string}
   {@param version: string}
-  {moduleUrl(name: $name)}/{$version}
+  {@param? unresolved: bool}
+  {if $unresolved}
+    https://registry.bazel.build/modules/{$name}/{$version}
+  {else}
+    {moduleUrl(name: $name)}/{$version}
+  {/if}
 {/template}
 
 {template moduleVersionDocsUrl kind="uri"}
@@ -109,7 +114,7 @@ import {
 
 {template registryPullRequestUrl kind="uri"}
   {@param pr: string}
-  https://github.com/bazelbuild/bazel-central-registry/pull/{$pr}
+  https://github.com/intrinsic-opensource/ros-central-registry/pull/{$pr}
 {/template}
 
 {template bazelPullRequestUrl kind="uri"}
