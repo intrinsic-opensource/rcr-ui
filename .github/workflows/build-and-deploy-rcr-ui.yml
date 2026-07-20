@@ -1,0 +1,66 @@
+# Copyright 2025 Open Source Robotics Foundation, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: build-and-deploy-rcr-ui
+run-name: ${{ github.actor }} builds and deploys github pages
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  repository_dispatch:
+    types: [on-rcr-trigger]
+
+permissions:
+  contents: write
+jobs:
+  build-and-deploy-rcr-ui: 
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: Update submodule
+      run: |
+        cd data/bazel-central-registry
+        git fetch origin
+        git checkout main
+        cd ../..
+
+    - name: Setup Bazel
+      uses: bazel-contrib/setup-bazel@0.19.0
+
+    - name: Clean and initialize BCR
+      run: make bcr_clean bcr_init bcr_update
+
+    - name: Build ghpages target
+      run: bazel run //:bcr
+        
+    - name: Build ghpages target
+      run: bazel build //app/bcr:ghpages
+
+    - name: Extract release tarball
+      run: |
+        mkdir -p site
+        tar -xf bazel-bin/app/bcr/release.tar -C site
+
+    - name: Deploy to github pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: site
