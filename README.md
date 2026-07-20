@@ -114,7 +114,7 @@ graph TB
         JS[bcr.js<br/>Closure-compiled] --> Embed
         CSS[bcr.css<br/>Styles] --> Embed
         HTML[index.html] --> Embed
-        Assets[favicon.png, sitemap.xml, robots.txt] --> Embed
+        Assets[favicon.ico, sitemap.xml, robots.txt] --> Embed
         Embed --> ReleaseTar[release.tar]
     end
 

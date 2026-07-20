@@ -414,7 +414,7 @@ css_purge(
 # raw src would copy the uncompressed registrylite.pb into the tarball as
 # dead weight.
 RELEASE_SRCS = [
-    "favicon.png",
+    "favicon.ico",
     "ros_logo.png",
     ":robots_txt",
     ":sitemap_xml",
