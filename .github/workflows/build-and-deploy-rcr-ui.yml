@@ -25,9 +25,19 @@ on:
     types: [on-rcr-trigger]
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build-and-deploy-rcr-ui: 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}     
     runs-on: ubuntu-latest
     steps:
 
@@ -60,7 +70,14 @@ jobs:
         mkdir -p site
         tar -xf bazel-bin/app/bcr/release.tar -C site
 
-    - name: Deploy to github pages
-      uses: JamesIves/github-pages-deploy-action@v4
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        folder: site
+        path: 'site'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v5

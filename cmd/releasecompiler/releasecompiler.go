@@ -572,7 +572,7 @@ func parseFlags(args []string) (cfg Config, err error) {
 	fs.StringVar(&cfg.BazelFlagDbFile, "bazel_flag_db_file", "", "the bazel flag database protobuf file (gzipped into the tarball as bazelflagdb.pb.gz)")
 	fs.StringVar(&cfg.PrerenderedPagesTar, "prerendered_pages_tar", "", "optional tar of prerendered HTML files to merge into the output tarball verbatim (entries are added as-is)")
 	fs.Var(&cfg.ModulesSrcFiles, "modules_src", "a file to include under modules/ in the tarball (repeatable)")
-	fs.StringVar(&excludeFromHashStr, "exclude_from_hash", "", "comma-separated list of basenames to exclude from hashing (e.g., favicon.png,robots.txt)")
+	fs.StringVar(&excludeFromHashStr, "exclude_from_hash", "", "comma-separated list of basenames to exclude from hashing (e.g., favicon.ico,robots.txt)")
 	fs.Usage = func() {
 		fmt.Fprintf(flag.CommandLine.Output(), "usage: %s @PARAMS_FILE", toolName)
 		fs.PrintDefaults()

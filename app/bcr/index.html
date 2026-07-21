@@ -8,7 +8,17 @@
 	data-dark-theme="dark_dimmed"
 >
 	<head>
-		<title>Bazel Central Registry</title>
+		<script>
+		// Dynamically set base href for subpath routing on GitHub Pages
+		(function () {
+			var base = document.createElement("base");
+			base.href = window.location.pathname.startsWith("/rcr-ui/")
+				? "/rcr-ui/"
+				: "/";
+			document.write(base.outerHTML);
+		})();
+		</script>
+		<title>ROS Central Registry</title>
 		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script>
@@ -35,21 +45,22 @@
 			if (!meta) return;
 			var snapshot =
 				(meta.getAttribute("content") || "").replace(/\/+$/, "") || "/";
-			var current = window.location.pathname.replace(/\/+$/, "") || "/";
+			var current =
+				window.location.pathname.replace(/^\/rcr-ui/, "").replace(/\/+$/, "") || "/";
 			if (current !== snapshot) {
 				document.documentElement.classList.add("bcr-booting");
 			}
 		})();
 		</script>
-		<link rel="icon" href="/favicon.png">
-		<link href="/{bcr.css}" type="text/css" rel="stylesheet">
-		<link href="/{primer.css}" type="text/css" rel="stylesheet">
-		<meta name="bcr:symbols-url" content="/{symbols.pb.gz}">
-		<meta name="bcr:packages-url" content="/{packages.pb.gz}">
-		<meta name="bcr:bazelflagdb-url" content="/{bazelflagdb.pb.gz}">
-		<meta name="bcr:manifest-url" content="/manifest.pb.gz">
-		<script src="/{bcr.js}" defer></script>
-		<script src="/{registry.pb.gz.b64.js}" defer></script>
+		<link rel="icon" href="favicon.ico">
+		<link href="{bcr.css}" type="text/css" rel="stylesheet">
+		<link href="{primer.css}" type="text/css" rel="stylesheet">
+		<meta name="bcr:symbols-url" content="{symbols.pb.gz}">
+		<meta name="bcr:packages-url" content="{packages.pb.gz}">
+		<meta name="bcr:bazelflagdb-url" content="{bazelflagdb.pb.gz}">
+		<meta name="bcr:manifest-url" content="manifest.pb.gz">
+		<script src="{bcr.js}" defer></script>
+		<script src="{registry.pb.gz.b64.js}" defer></script>
 	</head>
 
 	<body style="margin: 0 auto">

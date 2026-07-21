@@ -44,6 +44,7 @@ class RegistryApp extends App {
 	 * @param {function():!Promise<*>} bazelFlagDbLoader memoized lazy loader.
 	 * @param {!RefreshController} refreshController
 	 * @param {?dom.DomHelper=} opt_domHelper
+	 * @suppress {visibility,checkTypes}
 	 */
 	constructor(
 		registry,
@@ -55,6 +56,11 @@ class RegistryApp extends App {
 		opt_domHelper,
 	) {
 		super(opt_domHelper);
+
+		const pathPrefix = window.location.pathname.startsWith("/rcr-ui/")
+			? "/rcr-ui/"
+			: "/";
+		this.history_.history_.setPathPrefix(pathPrefix);
 
 		/** @private @const */
 		this.registry_ = registry;
@@ -626,6 +632,9 @@ class RegistryApp extends App {
 		}
 		// Legacy `/#/foo` bookmarks: pull the path out of the hash.
 		let path = url.pathname;
+		if (path.startsWith("/rcr-ui")) {
+			path = path.substring(7);
+		}
 		if (path === "/" && url.hash.startsWith("#/")) {
 			path = url.hash.substring(1);
 		}
@@ -651,7 +660,10 @@ class RegistryApp extends App {
 
 		// The app uses path-based routing; hash links like `/#/maintainers/foo`
 		// also work, so check both.
-		const raw = window.location.pathname + window.location.hash;
+		let raw = window.location.pathname + window.location.hash;
+		if (raw.startsWith("/rcr-ui")) {
+			raw = raw.substring(7);
+		}
 		const segments = raw
 			.replace(/^[#/]+/, "")
 			.split(/[\/#]+/)
